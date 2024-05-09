@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#333333"
+    tools:context=".FirstConfiguration.SecondStepConfiguration">
+
+    <TextView
+        android:id="@+id/TextViewSSC1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="What type of diet you prefer"
+        android:textColor="#FFFF00"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonBallancedChoice"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewSSC1"
+        android:text="ballanced diet"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/buttonHighProteinChoice"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/buttonBallancedChoice"
+        android:text="high protein diet"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/buttonHighFatChoice"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/buttonHighProteinChoice"
+        android:text="high fat diet"
+        android:textSize="20dp" />
+
+
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/TextViewCalories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="50dp"
+        android:text="Calories:"
+        android:textColor="#FFFF00"
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonHighFatChoice" />
+
+    <TextView
+        android:id="@+id/TextShowCalories"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textSize="30dp"
+        android:textColor="#FFFF00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/TextViewCalories"
+        app:layout_constraintTop_toBottomOf="@+id/buttonHighFatChoice" />
+
+
+
+
+    <TextView
+        android:id="@+id/TextViewProtein"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="50dp"
+        android:text="Protein:"
+        android:textColor="#FFFF00"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextShowCalories" />
+
+    <TextView
+        android:id="@+id/editProtein"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFF00"
+        android:layout_marginTop="30dp"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/TextViewProtein"
+        app:layout_constraintTop_toBottomOf="@+id/TextShowCalories" />
+
+    <TextView
+        android:id="@+id/TextViewShowProteinP"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editProtein"
+        app:layout_constraintTop_toBottomOf="@+id/TextShowCalories" />
+
+
+
+
+    <TextView
+        android:id="@+id/TextViewFats"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="50dp"
+        android:text="Fats:"
+        android:textColor="#FFFF00"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewProtein" />
+
+    <TextView
+        android:id="@+id/editFats"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFF00"
+        android:layout_marginTop="30dp"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/TextViewProtein"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewProtein" />
+
+    <TextView
+        android:id="@+id/TextViewShowFatsP"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editFats"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewProtein" />
+
+
+
+    <TextView
+        android:id="@+id/TextViewCarbs"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="50dp"
+        android:text="Carbs:"
+        android:textColor="#FFFF00"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewFats" />
+
+    <TextView
+        android:id="@+id/editCarbs"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFF00"
+        android:layout_marginTop="30dp"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/TextViewFats"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewFats" />
+
+    <TextView
+        android:id="@+id/TextViewShowCarbsP"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editCarbs"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewFats" />
+
+
+    <Button
+        android:id="@+id/buttonEndConfiguration"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="#00FF00"
+        android:text="Proceed"
+        android:textSize="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editCarbs" />
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
