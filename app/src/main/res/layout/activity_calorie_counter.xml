@@ -58,13 +58,593 @@
         android:textColor="#FFFF00" />
 
     <TextView
-        android:layout_width="70dp"
+        android:id="@+id/ShowProtein"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:textColor="#FFFF00"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ShowCalories" />
+
+    <TextView
+        android:id="@+id/TextProtein"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="PROTEIN:"
+        android:textColor="#FFFF00"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ShowCalories" />
+
+
+
+    <TextView
+        android:id="@+id/ShowFats"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textColor="#FFFF00"
+        android:textSize="20dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ShowCalories" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="FATS:"
+        android:textColor="#FFFF00"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ShowCalories" />
+
+    <TextView
+        android:id="@+id/ShowCarbs"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:textColor="#FFFF00"
+        android:gravity="center"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ShowCalories" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="CARBS:"
+        android:textColor="#FFFF00"
+        android:textSize="15dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ShowCalories" />
+
+
+    <View
+        android:id="@+id/ViewLine1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="650dp"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="20dp"
+        android:text="SETTINGS"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:text="UPDATE WEIGHT"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ShowPoints"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:textColor="#FFFF00"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ViewLine1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <View
+        android:id="@+id/ViewLine2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="200dp"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <View
+        android:id="@+id/ViewLine3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="560dp"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <View
+        android:id="@+id/ViewLine4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="470dp"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <View
+        android:id="@+id/ViewLine5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="380dp"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <View
+        android:id="@+id/ViewLine6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="290dp"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/TextMeal1"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="20dp"
+        android:text="Meal 1:"
         android:textColor="#FFFF00"
         android:textSize="25dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ShowCalories"
-        android:layout_marginStart="30dp"/>
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ViewLine1" />
+
+    <Button
+        android:id="@+id/AddMeal1"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        app:layout_constraintStart_toEndOf="@+id/TextMeal1"
+        app:layout_constraintTop_toBottomOf="@+id/ViewLine1"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:gravity="top|center"
+        android:text="ADD"
+        android:textSize= "10dp" />
+
+    <Button
+        android:id="@+id/DeleteMeal1"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        app:layout_constraintStart_toEndOf="@+id/AddMeal1"
+        app:layout_constraintTop_toBottomOf="@+id/ViewLine1"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:gravity="top|center"
+        android:text="Delete"
+        android:textSize= "10dp" />
+
+    <TextView
+        android:id="@+id/ShowMeal1Calories"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine3"
+        android:layout_marginStart="20dp"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextMeal1" />
+
+    <TextView
+        android:id="@+id/ShowMeal1Protein"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine3"
+        app:layout_constraintStart_toEndOf="@+id/ShowMeal1Calories"
+        app:layout_constraintTop_toBottomOf="@+id/TextMeal1" />
+
+    <TextView
+        android:id="@+id/ShowMeal1Fats"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginStart="20dp"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine3"
+        app:layout_constraintStart_toEndOf="@+id/ShowMeal1Protein"
+        app:layout_constraintTop_toBottomOf="@+id/TextMeal1" />
+
+    <TextView
+        android:id="@+id/ShowMeal1Carbs"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine3"
+        app:layout_constraintStart_toEndOf="@+id/ShowMeal1Fats"
+        app:layout_constraintTop_toBottomOf="@+id/TextMeal1" />
+
+
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/TextMeal2"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="Meal 2:"
+        android:textColor="#FFFF00"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ViewLine3" />
+
+    <Button
+        android:id="@+id/AddMeal2"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        app:layout_constraintStart_toEndOf="@+id/TextMeal1"
+        app:layout_constraintTop_toBottomOf="@+id/ViewLine3"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:gravity="top|center"
+        android:text="ADD"
+        android:textSize= "10dp" />
+
+    <Button
+        android:id="@+id/DeleteMeal2"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        app:layout_constraintStart_toEndOf="@+id/AddMeal1"
+        app:layout_constraintTop_toBottomOf="@+id/ViewLine3"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:gravity="top|center"
+        android:text="Delete"
+        android:textSize= "10dp" />
+
+    <TextView
+        android:id="@+id/ShowMeal2Calories"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextMeal2" />
+
+    <TextView
+        android:id="@+id/ShowMeal2Protein"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine4"
+        app:layout_constraintStart_toEndOf="@+id/ShowMeal2Calories"
+        app:layout_constraintTop_toBottomOf="@+id/TextMeal2" />
+
+    <TextView
+        android:id="@+id/ShowMeal2Fats"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginStart="20dp"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine4"
+        app:layout_constraintStart_toEndOf="@+id/ShowMeal2Protein"
+        app:layout_constraintTop_toBottomOf="@+id/TextMeal2" />
+
+    <TextView
+        android:id="@+id/ShowMeal2Carbs"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine4"
+        app:layout_constraintStart_toEndOf="@+id/ShowMeal2Fats"
+        app:layout_constraintTop_toBottomOf="@+id/TextMeal2" />
+
+
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/TextMeal3"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="Meal 3:"
+        android:textColor="#FFFF00"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ViewLine4" />
+
+    <Button
+        android:id="@+id/AddMeal3"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        app:layout_constraintStart_toEndOf="@+id/TextMeal2"
+        app:layout_constraintTop_toBottomOf="@+id/ViewLine4"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:gravity="top|center"
+        android:text="ADD"
+        android:textSize= "10dp" />
+
+    <Button
+        android:id="@+id/DeleteMeal3"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        app:layout_constraintStart_toEndOf="@+id/AddMeal2"
+        app:layout_constraintTop_toBottomOf="@+id/ViewLine4"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:gravity="top|center"
+        android:text="Delete"
+        android:textSize= "10dp" />
+
+    <TextView
+        android:id="@+id/ShowMeal3Calories"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextMeal3" />
+
+    <TextView
+        android:id="@+id/ShowMeal3Protein"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine5"
+        app:layout_constraintStart_toEndOf="@+id/ShowMeal3Calories"
+        app:layout_constraintTop_toBottomOf="@+id/TextMeal3" />
+
+    <TextView
+        android:id="@+id/ShowMeal3Fats"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginStart="20dp"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine5"
+        app:layout_constraintStart_toEndOf="@+id/ShowMeal3Protein"
+        app:layout_constraintTop_toBottomOf="@+id/TextMeal3" />
+
+    <TextView
+        android:id="@+id/ShowMeal3Carbs"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine5"
+        app:layout_constraintStart_toEndOf="@+id/ShowMeal3Fats"
+        app:layout_constraintTop_toBottomOf="@+id/TextMeal3" />
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/TextMeal4"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="Meal 4:"
+        android:textColor="#FFFF00"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ViewLine5" />
+
+    <Button
+        android:id="@+id/AddMeal4"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        app:layout_constraintStart_toEndOf="@+id/TextMeal3"
+        app:layout_constraintTop_toBottomOf="@+id/ViewLine5"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:gravity="top|center"
+        android:text="ADD"
+        android:textSize= "10dp" />
+
+    <Button
+        android:id="@+id/DeleteMeal4"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        app:layout_constraintStart_toEndOf="@+id/AddMeal3"
+        app:layout_constraintTop_toBottomOf="@+id/ViewLine5"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:gravity="top|center"
+        android:text="Delete"
+        android:textSize= "10dp" />
+
+    <TextView
+        android:id="@+id/ShowMeal4Calories"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextMeal4" />
+
+    <TextView
+        android:id="@+id/ShowMeal4Protein"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine6"
+        app:layout_constraintStart_toEndOf="@+id/ShowMeal4Calories"
+        app:layout_constraintTop_toBottomOf="@+id/TextMeal4" />
+
+    <TextView
+        android:id="@+id/ShowMeal4Fats"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginStart="20dp"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine6"
+        app:layout_constraintStart_toEndOf="@+id/ShowMeal4Protein"
+        app:layout_constraintTop_toBottomOf="@+id/TextMeal4" />
+
+    <TextView
+        android:id="@+id/ShowMeal4Carbs"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine6"
+        app:layout_constraintStart_toEndOf="@+id/ShowMeal4Fats"
+        app:layout_constraintTop_toBottomOf="@+id/TextMeal4" />
+
+
+
+
+
+    <TextView
+        android:id="@+id/TextMeal5"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="Meal 5:"
+        android:textColor="#FFFF00"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ViewLine6" />
+
+    <Button
+        android:id="@+id/AddMeal5"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        app:layout_constraintStart_toEndOf="@+id/TextMeal4"
+        app:layout_constraintTop_toBottomOf="@+id/ViewLine6"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:gravity="top|center"
+        android:text="ADD"
+        android:textSize= "10dp" />
+
+    <Button
+        android:id="@+id/DeleteMeal5"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        app:layout_constraintStart_toEndOf="@+id/AddMeal4"
+        app:layout_constraintTop_toBottomOf="@+id/ViewLine6"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:gravity="top|center"
+        android:text="Delete"
+        android:textSize= "10dp" />
+
+    <TextView
+        android:id="@+id/ShowMeal5Calories"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextMeal5" />
+
+    <TextView
+        android:id="@+id/ShowMeal5Protein"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine2"
+        app:layout_constraintStart_toEndOf="@+id/ShowMeal5Calories"
+        app:layout_constraintTop_toBottomOf="@+id/TextMeal5" />
+
+    <TextView
+        android:id="@+id/ShowMeal5Fats"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginStart="20dp"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine2"
+        app:layout_constraintStart_toEndOf="@+id/ShowMeal5Protein"
+        app:layout_constraintTop_toBottomOf="@+id/TextMeal5" />
+
+    <TextView
+        android:id="@+id/ShowMeal5Carbs"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine2"
+        app:layout_constraintStart_toEndOf="@+id/ShowMeal5Fats"
+        app:layout_constraintTop_toBottomOf="@+id/TextMeal5" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
