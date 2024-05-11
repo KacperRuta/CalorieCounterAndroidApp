@@ -7,6 +7,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import pl.kr.myapplication.CalorieCounterActivity
+import pl.kr.myapplication.ViewModels.ConfigurationViewModel
 import pl.kr.myapplication.databinding.ActivitySecondStepConfigurationBinding
 import kotlin.math.roundToInt
 

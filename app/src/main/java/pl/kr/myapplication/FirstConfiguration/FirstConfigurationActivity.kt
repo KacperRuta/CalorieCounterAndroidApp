@@ -8,6 +8,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import pl.kr.myapplication.ViewModels.ConfigurationViewModel
 import pl.kr.myapplication.databinding.ActivityFirstConfigurationBinding
 
 

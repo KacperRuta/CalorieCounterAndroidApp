@@ -3,7 +3,7 @@ package pl.kr.myapplication.FirstConfiguration.userConfigurationData
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 
-class AppDatabaseCallback : RoomDatabase.Callback() {
+class AppDatabaseUserConfigurationCallback : RoomDatabase.Callback() {
 
     override fun onCreate(db: SupportSQLiteDatabase) {
         super.onCreate(db)

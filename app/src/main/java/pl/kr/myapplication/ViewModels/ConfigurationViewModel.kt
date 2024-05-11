@@ -1,10 +1,11 @@
-package pl.kr.myapplication.FirstConfiguration
+package pl.kr.myapplication.ViewModels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+import pl.kr.myapplication.FirstConfiguration.UserConfigurationRepository
 import pl.kr.myapplication.FirstConfiguration.userConfigurationData.UserConfiguration
 
 

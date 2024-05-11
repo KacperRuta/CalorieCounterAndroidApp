@@ -22,7 +22,7 @@ object ConfigurationDb{
                         UserConfigurationDatabase::class.java,
                         "configuration-database"
                     )
-                        .addCallback(AppDatabaseCallback()) // Dodaj callback
+                        .addCallback(AppDatabaseUserConfigurationCallback()) // Dodaj callback
                         .build()
                 }
                 return INSTANCE!!
