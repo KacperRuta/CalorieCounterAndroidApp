@@ -1,10 +1,10 @@
-package pl.kr.myapplication.MealDetailsDatabase
+package pl.kr.myapplication.ProductsDatabasePackage
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class Products(
+data class Product(
     @PrimaryKey val meal_name: String,
     val calories: Int,
     val protein: Int,

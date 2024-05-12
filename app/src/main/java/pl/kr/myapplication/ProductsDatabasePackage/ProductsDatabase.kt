@@ -1,20 +1,19 @@
-package pl.kr.myapplication.MealDetailsDatabase
+package pl.kr.myapplication.ProductsDatabasePackage
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import pl.kr.myapplication.MealMacrosDatabase.AppDatabaseAllUserMacriosCallback
 
-@Database(entities = [Products::class], version = 1)
+@Database(entities = [Product::class], version = 1)
 
 abstract class ProductsDatabase: RoomDatabase() {
 
-    abstract fun allUserMacrosDao(): ProductsDao
+    abstract fun productsDao(): ProductsDao
 }
 
 
-object AllUserMacrosDb{
+object ProductsDb{
     private var INSTANCE: ProductsDatabase? = null
 
     fun getInstance(context: Context): ProductsDatabase {
@@ -25,7 +24,7 @@ object AllUserMacrosDb{
                     ProductsDatabase::class.java,
                     "products-database"
                 )
-                    .addCallback(AppDatabaseAllUserMacriosCallback()) // Dodaj callback
+                    .addCallback(ProductsDatabaseCallback()) // Dodaj callback
                     .build()
             }
             return INSTANCE!!

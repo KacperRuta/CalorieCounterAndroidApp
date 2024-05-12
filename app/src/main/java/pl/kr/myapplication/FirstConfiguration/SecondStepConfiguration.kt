@@ -251,13 +251,8 @@ class SecondStepConfiguration : AppCompatActivity() {
                 explicitIntent.putExtra("Protein",configVm.protein)
                 explicitIntent.putExtra("Fats",configVm.fats)
                 explicitIntent.putExtra("Carbs",configVm.carbs)
-                var intArray = intArrayOf(mealMacrosVm.current_macros.calories,
-                    mealMacrosVm.current_macros.protein,
-                    mealMacrosVm.current_macros.fats,
-                    mealMacrosVm.current_macros.carbs)
-                explicitIntent.putExtra("Current_macros",intArray)
 
-                intArray = intArrayOf(mealMacrosVm.meal_macros_1.calories,
+                var intArray = intArrayOf(mealMacrosVm.meal_macros_1.calories,
                     mealMacrosVm.meal_macros_1.protein,
                     mealMacrosVm.meal_macros_1.fats,
                     mealMacrosVm.meal_macros_1.carbs)

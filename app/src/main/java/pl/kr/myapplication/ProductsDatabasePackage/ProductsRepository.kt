@@ -1,16 +1,20 @@
-package pl.kr.myapplication.MealDetailsDatabase
+package pl.kr.myapplication.ProductsDatabasePackage
 
 import android.content.Context
 
 class ProductsRepository(context: Context): ProductsDao {
 
-    private val productsDao = AllUserMacrosDb.getInstance(context).allUserMacrosDao()
-    override suspend fun insertOrUpdateMeal(meal: Products) {
+    private val productsDao = ProductsDb.getInstance(context).productsDao()
+    override suspend fun insertOrUpdateMeal(meal: Product) {
         productsDao.insertOrUpdateMeal(meal)
     }
 
-    override fun findMeals(word: String): List<Products> {
+    override suspend fun findMeals(word: String): List<Product> {
         return productsDao.findMeals(word)
+    }
+
+    override suspend fun getAllProducts(): List<Product> {
+        return productsDao.getAllProducts()
     }
 
     override suspend fun getCalories(mealID: String): Int {

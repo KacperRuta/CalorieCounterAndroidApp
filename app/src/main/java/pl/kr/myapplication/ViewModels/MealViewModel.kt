@@ -23,7 +23,6 @@ class MealViewModel(app: Application): AndroidViewModel(app) {
 
     fun startingConfig() {
         CoroutineScope(viewModelScope.coroutineContext).launch {
-            current_macros = Macros(allMacrosRepo.getCalories(0), allMacrosRepo.getProtein(0), allMacrosRepo.getFats(0), allMacrosRepo.getCarbs(0))
             meal_macros_1 = Macros(allMacrosRepo.getCalories(1), allMacrosRepo.getProtein(1), allMacrosRepo.getFats(1), allMacrosRepo.getCarbs(1))
             meal_macros_2 = Macros(allMacrosRepo.getCalories(2), allMacrosRepo.getProtein(2), allMacrosRepo.getFats(2), allMacrosRepo.getCarbs(2))
             meal_macros_3 = Macros(allMacrosRepo.getCalories(3), allMacrosRepo.getProtein(3), allMacrosRepo.getFats(3), allMacrosRepo.getCarbs(3))
@@ -41,6 +40,12 @@ class MealViewModel(app: Application): AndroidViewModel(app) {
                 meal_macros.fats,
                 meal_macros.carbs
             )
+        }
+    }
+
+    fun reset_meal_macros(mealID: Int){
+        CoroutineScope(viewModelScope.coroutineContext).launch {
+            allMacrosRepo.resetValuesById(mealID)
         }
     }
 }

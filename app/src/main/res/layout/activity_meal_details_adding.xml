@@ -27,23 +27,34 @@
 
     <Button
         android:id="@+id/buttonSearchForProduct"
-        android:layout_width="300dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:text="SEARCH FOR YOUR PRODUCT"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ViewLine2"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp" />
+
+    <EditText
+        android:id="@+id/enterProductName"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFF00"
+        android:textSize="20dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSearchForProduct"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ViewLine1" />
 
     <Button
         android:id="@+id/buttonEnterProduct"
-        android:layout_width="300dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="Enter PRODUCT"
         app:layout_constraintBottom_toTopOf="@+id/ViewLine2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSearchForProduct" />
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/ViewLine1" />
 
     <View
         android:id="@+id/ViewLine2"
@@ -67,6 +78,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:textColor="#FFFF00"
+        android:gravity="center"
         app:layout_constraintTop_toBottomOf="@+id/ViewLine3"
         android:layout_marginTop="10dp"
         android:textSize="25dp"/>
@@ -75,8 +88,10 @@
         android:id="@+id/ShowCurrentMealProtein"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:textColor="#FFFF00"
         app:layout_constraintTop_toBottomOf="@+id/ShowCurrentMealCalories"
         android:layout_marginStart="20dp"
         android:textSize="20dp"/>
@@ -87,15 +102,19 @@
         android:layout_height="wrap_content"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:textColor="#FFFF00"
         app:layout_constraintTop_toBottomOf="@+id/ShowCurrentMealCalories" />
 
     <TextView
         android:id="@+id/ShowCurrentMealCarbs"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:textSize="20dp"
+        android:textColor="#FFFF00"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="20dp"
@@ -108,103 +127,112 @@
 
 
     <Button
-        android:id="@+id/buttonProduct1"
+        android:id="@+id/TextProduct1"
         android:layout_width="400dp"
         android:layout_height="35dp"
         android:textSize="10dp"
-        android:layout_marginTop="5dp"
         android:visibility="invisible"
+        android:clickable="false"
+        android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ViewLine2" />
 
     <Button
-        android:id="@+id/buttonProduct2"
+        android:id="@+id/TextProduct2"
         android:layout_width="400dp"
         android:layout_height="35dp"
         android:layout_marginTop="5dp"
         android:textSize="10dp"
         android:visibility="invisible"
+        android:clickable="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonProduct1" />
+        app:layout_constraintTop_toBottomOf="@+id/TextProduct1" />
 
     <Button
-        android:id="@+id/buttonProduct3"
+        android:id="@+id/TextProduct3"
         android:layout_width="400dp"
         android:layout_height="35dp"
         android:layout_marginTop="5dp"
         android:textSize="10dp"
         android:visibility="invisible"
+        android:clickable="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonProduct2" />
+        app:layout_constraintTop_toBottomOf="@+id/TextProduct2" />
 
     <Button
-        android:id="@+id/buttonProduct4"
+        android:id="@+id/TextProduct4"
         android:layout_width="400dp"
         android:layout_height="35dp"
         android:layout_marginTop="5dp"
         android:textSize="10dp"
         android:visibility="invisible"
+        android:clickable="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonProduct3" />
+        app:layout_constraintTop_toBottomOf="@+id/TextProduct3" />
 
     <Button
-        android:id="@+id/buttonProduct5"
+        android:id="@+id/TextProduct5"
         android:layout_width="400dp"
         android:layout_height="35dp"
         android:layout_marginTop="5dp"
         android:textSize="10dp"
         android:visibility="invisible"
+        android:clickable="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonProduct4" />
+        app:layout_constraintTop_toBottomOf="@+id/TextProduct4" />
 
     <Button
-        android:id="@+id/buttonProduct6"
+        android:id="@+id/TextProduct6"
         android:layout_width="400dp"
         android:layout_height="35dp"
         android:layout_marginTop="5dp"
         android:textSize="10dp"
         android:visibility="invisible"
+        android:clickable="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonProduct5" />
+        app:layout_constraintTop_toBottomOf="@+id/TextProduct5" />
 
     <Button
-        android:id="@+id/buttonProduct7"
+        android:id="@+id/TextProduct7"
         android:layout_width="400dp"
         android:layout_height="35dp"
         android:layout_marginTop="5dp"
         android:textSize="10dp"
         android:visibility="invisible"
+        android:clickable="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonProduct6" />
+        app:layout_constraintTop_toBottomOf="@+id/TextProduct6" />
 
     <Button
-        android:id="@+id/buttonProduct8"
+        android:id="@+id/TextProduct8"
         android:layout_width="400dp"
         android:layout_height="35dp"
         android:layout_marginTop="5dp"
-        android:textSize="10dp"
         android:visibility="invisible"
+        android:clickable="false"
+        android:textSize="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonProduct7" />
+        app:layout_constraintTop_toBottomOf="@+id/TextProduct7" />
 
     <Button
-        android:id="@+id/buttonProduct9"
+        android:id="@+id/TextProduct9"
         android:layout_width="400dp"
         android:layout_height="35dp"
         android:layout_marginTop="5dp"
-        android:textSize="10dp"
         android:visibility="invisible"
+        android:clickable="false"
+        android:textSize="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonProduct8" />
+        app:layout_constraintTop_toBottomOf="@+id/TextProduct8" />
 
 
 

@@ -59,6 +59,27 @@ class CalorieCounterActivity : AppCompatActivity() {
         }
     }
 
+    fun calculate_current_macros(){
+        mealMacrosVm.current_macros = Macros(mealMacrosVm.meal_macros_1.calories +
+                mealMacrosVm.meal_macros_2.calories +
+                mealMacrosVm.meal_macros_3.calories +
+                mealMacrosVm.meal_macros_4.calories +
+                mealMacrosVm.meal_macros_5.calories,
+            mealMacrosVm.meal_macros_1.protein +
+                    mealMacrosVm.meal_macros_2.protein +
+                    mealMacrosVm.meal_macros_3.protein +
+                    mealMacrosVm.meal_macros_4.protein +
+                    mealMacrosVm.meal_macros_5.protein,
+            mealMacrosVm.meal_macros_1.fats +
+                    mealMacrosVm.meal_macros_2.fats +
+                    mealMacrosVm.meal_macros_3.fats +
+                    mealMacrosVm.meal_macros_4.fats +
+                    mealMacrosVm.meal_macros_5.fats,
+            mealMacrosVm.meal_macros_1.carbs +
+                    mealMacrosVm.meal_macros_2.carbs +
+                    mealMacrosVm.meal_macros_3.carbs +
+                    mealMacrosVm.meal_macros_4.carbs + mealMacrosVm.meal_macros_5.carbs)
+    }
     fun start_calories_counter(){
         configVm.startingConfig()
 
@@ -70,7 +91,6 @@ class CalorieCounterActivity : AppCompatActivity() {
 
         val defaultIntArray = intArrayOf(0, 0, 0, 0)
         var intArray = intent.getIntArrayExtra("Current_macros") ?: defaultIntArray
-        mealMacrosVm.current_macros = Macros(intArray[0],intArray[1],intArray[2],intArray[3])
 
 
         intArray = intent.getIntArrayExtra("Meal_macros_1") ?: defaultIntArray
@@ -84,6 +104,7 @@ class CalorieCounterActivity : AppCompatActivity() {
         intArray = intent.getIntArrayExtra("Meal_macros_5") ?: defaultIntArray
         mealMacrosVm.meal_macros_5 = Macros(intArray[0],intArray[1],intArray[2],intArray[3])
 
+        calculate_current_macros()
         show_meals()
 
 
@@ -97,13 +118,109 @@ class CalorieCounterActivity : AppCompatActivity() {
         start_calories_counter()
 
         binding.ChangeConfiguration.setOnClickListener{
-            val intent = Intent(this, FirstConfigurationActivity::class.java)
-            startActivity(intent)
+            val explicitIntent = Intent(applicationContext, FirstConfigurationActivity::class.java)
+            startActivity(explicitIntent)
             finish()
         }
 
         binding.buttonUpdateWeight.setOnClickListener {
+            val explicitIntent = Intent(applicationContext, UpdateWeightActivity::class.java)
+            startActivity(explicitIntent)
+            finish()
+        }
 
+
+
+
+
+        binding.AddMeal1.setOnClickListener {
+            val explicitIntent = Intent(applicationContext, MealDetailsAdding::class.java)
+            explicitIntent.putExtra("MealNumber", 1)
+            var intArray = intArrayOf(mealMacrosVm.meal_macros_1.calories,
+                mealMacrosVm.meal_macros_1.protein,
+                mealMacrosVm.meal_macros_1.fats,
+                mealMacrosVm.meal_macros_1.carbs)
+            explicitIntent.putExtra("Meal_macros",intArray)
+            startActivity(explicitIntent)
+            finish()
+        }
+
+        binding.DeleteMeal1.setOnClickListener {
+            mealMacrosVm.reset_meal_macros(1)
+            mealMacrosVm.meal_macros_1 = Macros(0,0,0,0)
+            calculate_current_macros()
+        }
+
+        binding.AddMeal2.setOnClickListener {
+            val explicitIntent = Intent(applicationContext, MealDetailsAdding::class.java)
+            explicitIntent.putExtra("MealNumber", 2)
+            var intArray = intArrayOf(mealMacrosVm.meal_macros_2.calories,
+                mealMacrosVm.meal_macros_2.protein,
+                mealMacrosVm.meal_macros_2.fats,
+                mealMacrosVm.meal_macros_2.carbs)
+            explicitIntent.putExtra("Meal_macros",intArray)
+            startActivity(explicitIntent)
+            finish()
+        }
+
+        binding.DeleteMeal2.setOnClickListener {
+            mealMacrosVm.reset_meal_macros(2)
+            mealMacrosVm.meal_macros_1 = Macros(0,0,0,0)
+            calculate_current_macros()
+        }
+
+        binding.AddMeal3.setOnClickListener {
+            val explicitIntent = Intent(applicationContext, MealDetailsAdding::class.java)
+            explicitIntent.putExtra("MealNumber", 3)
+            var intArray = intArrayOf(mealMacrosVm.meal_macros_3.calories,
+                mealMacrosVm.meal_macros_3.protein,
+                mealMacrosVm.meal_macros_3.fats,
+                mealMacrosVm.meal_macros_3.carbs)
+            explicitIntent.putExtra("Meal_macros",intArray)
+            startActivity(explicitIntent)
+            finish()
+        }
+
+        binding.DeleteMeal3.setOnClickListener {
+            mealMacrosVm.reset_meal_macros(3)
+            mealMacrosVm.meal_macros_3 = Macros(0,0,0,0)
+            calculate_current_macros()
+        }
+
+        binding.AddMeal4.setOnClickListener {
+            val explicitIntent = Intent(applicationContext, MealDetailsAdding::class.java)
+            explicitIntent.putExtra("MealNumber", 4)
+            var intArray = intArrayOf(mealMacrosVm.meal_macros_4.calories,
+                mealMacrosVm.meal_macros_4.protein,
+                mealMacrosVm.meal_macros_4.fats,
+                mealMacrosVm.meal_macros_4.carbs)
+            explicitIntent.putExtra("Meal_macros",intArray)
+            startActivity(explicitIntent)
+            finish()
+        }
+
+        binding.DeleteMeal4.setOnClickListener {
+            mealMacrosVm.reset_meal_macros(4)
+            mealMacrosVm.meal_macros_4 = Macros(0,0,0,0)
+            calculate_current_macros()
+        }
+
+        binding.AddMeal5.setOnClickListener {
+            val explicitIntent = Intent(applicationContext, MealDetailsAdding::class.java)
+            explicitIntent.putExtra("MealNumber", 5)
+            var intArray = intArrayOf(mealMacrosVm.meal_macros_5.calories,
+                mealMacrosVm.meal_macros_5.protein,
+                mealMacrosVm.meal_macros_5.fats,
+                mealMacrosVm.meal_macros_5.carbs)
+            explicitIntent.putExtra("Meal_macros",intArray)
+            startActivity(explicitIntent)
+            finish()
+        }
+
+        binding.DeleteMeal5.setOnClickListener {
+            mealMacrosVm.reset_meal_macros(5)
+            mealMacrosVm.meal_macros_5 = Macros(0,0,0,0)
+            calculate_current_macros()
         }
 
 
