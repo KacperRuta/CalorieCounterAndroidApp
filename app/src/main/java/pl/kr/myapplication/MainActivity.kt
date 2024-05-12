@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
             if (configVm.configurated == false) {
                 val explicitIntent = Intent(applicationContext, FirstConfigurationActivity::class.java)
                 startActivity(explicitIntent)
+                finish()
             } else {
                 val explicitIntent = Intent(applicationContext, CalorieCounterActivity::class.java)
                 explicitIntent.putExtra("Calories",configVm.calories)
@@ -72,6 +73,7 @@ class MainActivity : AppCompatActivity() {
                 explicitIntent.putExtra("Meal_macros_5",intArray)
 
                 startActivity(explicitIntent)
+                finish()
             }
         }
 

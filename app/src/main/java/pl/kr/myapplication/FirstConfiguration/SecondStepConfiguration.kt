@@ -8,12 +8,14 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import pl.kr.myapplication.CalorieCounterActivity
 import pl.kr.myapplication.ViewModels.ConfigurationViewModel
+import pl.kr.myapplication.ViewModels.MealViewModel
 import pl.kr.myapplication.databinding.ActivitySecondStepConfigurationBinding
 import kotlin.math.roundToInt
 
 class SecondStepConfiguration : AppCompatActivity() {
 
     private val configVm by viewModels<ConfigurationViewModel>()
+    private val mealMacrosVm by viewModels<MealViewModel>()
 
     private lateinit var binding: ActivitySecondStepConfigurationBinding
 
@@ -164,6 +166,7 @@ class SecondStepConfiguration : AppCompatActivity() {
         setContentView(binding.root)
 
         configVm.startingConfig()
+        mealMacrosVm.startingConfig()
 
         ////////////////////////////////////////////////////////////
         // Obsługa wyboru aktywnosci diety po przyciskach
@@ -244,11 +247,48 @@ class SecondStepConfiguration : AppCompatActivity() {
                 configVm.updateConfig()
 
                 val explicitIntent = Intent(applicationContext, CalorieCounterActivity::class.java)
-                explicitIntent.putExtra("Calories",calories)
-                explicitIntent.putExtra("Protein",protein)
-                explicitIntent.putExtra("Fats",fats)
-                explicitIntent.putExtra("Carbs",carbs)
+                explicitIntent.putExtra("Calories",configVm.calories)
+                explicitIntent.putExtra("Protein",configVm.protein)
+                explicitIntent.putExtra("Fats",configVm.fats)
+                explicitIntent.putExtra("Carbs",configVm.carbs)
+                var intArray = intArrayOf(mealMacrosVm.current_macros.calories,
+                    mealMacrosVm.current_macros.protein,
+                    mealMacrosVm.current_macros.fats,
+                    mealMacrosVm.current_macros.carbs)
+                explicitIntent.putExtra("Current_macros",intArray)
+
+                intArray = intArrayOf(mealMacrosVm.meal_macros_1.calories,
+                    mealMacrosVm.meal_macros_1.protein,
+                    mealMacrosVm.meal_macros_1.fats,
+                    mealMacrosVm.meal_macros_1.carbs)
+                explicitIntent.putExtra("Meal_macros_1",intArray)
+
+                intArray = intArrayOf(mealMacrosVm.meal_macros_2.calories,
+                    mealMacrosVm.meal_macros_2.protein,
+                    mealMacrosVm.meal_macros_2.fats,
+                    mealMacrosVm.meal_macros_2.carbs)
+                explicitIntent.putExtra("Meal_macros_2",intArray)
+
+                intArray = intArrayOf(mealMacrosVm.meal_macros_3.calories,
+                    mealMacrosVm.meal_macros_3.protein,
+                    mealMacrosVm.meal_macros_3.fats,
+                    mealMacrosVm.meal_macros_3.carbs)
+                explicitIntent.putExtra("Meal_macros_3",intArray)
+
+                intArray = intArrayOf(mealMacrosVm.meal_macros_4.calories,
+                    mealMacrosVm.meal_macros_4.protein,
+                    mealMacrosVm.meal_macros_4.fats,
+                    mealMacrosVm.meal_macros_4.carbs)
+                explicitIntent.putExtra("Meal_macros_4",intArray)
+
+                intArray = intArrayOf(mealMacrosVm.meal_macros_5.calories,
+                    mealMacrosVm.meal_macros_5.protein,
+                    mealMacrosVm.meal_macros_5.fats,
+                    mealMacrosVm.meal_macros_5.carbs)
+                explicitIntent.putExtra("Meal_macros_5",intArray)
+
                 startActivity(explicitIntent)
+                finish()
             }
         }
 

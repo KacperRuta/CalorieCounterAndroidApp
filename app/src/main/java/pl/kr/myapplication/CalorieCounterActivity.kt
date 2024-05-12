@@ -1,8 +1,10 @@
 package pl.kr.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import pl.kr.myapplication.FirstConfiguration.FirstConfigurationActivity
 import pl.kr.myapplication.Structures.Macros
 import pl.kr.myapplication.ViewModels.ConfigurationViewModel
 import pl.kr.myapplication.ViewModels.MealViewModel
@@ -17,15 +19,13 @@ class CalorieCounterActivity : AppCompatActivity() {
 
     var macros_goal:Macros = Macros(0,0,0,0)
 
-    var current_macros: Macros = Macros(0,0,0,0)
-
     var points: Int = 0
 
     fun show_meals(){
-        binding.ShowCalories.text = "Calories:    " + current_macros.calories.toString() + "  /  " + macros_goal.calories.toString()
-        binding.ShowProtein.text = current_macros.protein.toString() + " / " + macros_goal.protein.toString()
-        binding.ShowFats.text = current_macros.fats.toString() + " / " + macros_goal.fats.toString()
-        binding.ShowCarbs.text = current_macros.carbs.toString() + " / " + macros_goal.carbs.toString()
+        binding.ShowCalories.text = "Calories:    " + mealMacrosVm.current_macros.calories.toString() + "  /  " + macros_goal.calories.toString()
+        binding.ShowProtein.text = mealMacrosVm.current_macros.protein.toString() + " / " + macros_goal.protein.toString()
+        binding.ShowFats.text = mealMacrosVm.current_macros.fats.toString() + " / " + macros_goal.fats.toString()
+        binding.ShowCarbs.text = mealMacrosVm.current_macros.carbs.toString() + " / " + macros_goal.carbs.toString()
 
         if(mealMacrosVm.meal_macros_1.calories != 0){
             binding.ShowMeal1Calories.text = mealMacrosVm.meal_macros_1.calories.toString() + " kcal"
@@ -95,6 +95,16 @@ class CalorieCounterActivity : AppCompatActivity() {
         binding = ActivityCalorieCounterBinding.inflate(layoutInflater)
 
         start_calories_counter()
+
+        binding.ChangeConfiguration.setOnClickListener{
+            val intent = Intent(this, FirstConfigurationActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        binding.buttonUpdateWeight.setOnClickListener {
+
+        }
 
 
         setContentView(binding.root)

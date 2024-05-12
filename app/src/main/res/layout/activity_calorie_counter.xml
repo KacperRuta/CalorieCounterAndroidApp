@@ -143,18 +143,21 @@
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/ChangeConfiguration"
         android:layout_width="120dp"
         android:layout_height="60dp"
         android:layout_marginEnd="20dp"
-        android:text="SETTINGS"
+        android:text="CONFIGURATE AGAIN"
         app:layout_constraintBottom_toTopOf="@+id/ViewLine1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
+
+
+
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonUpdateWeight"
         android:layout_width="120dp"
         android:layout_height="60dp"
         android:layout_marginStart="20dp"
@@ -162,6 +165,11 @@
         app:layout_constraintBottom_toTopOf="@+id/ViewLine1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
 
     <TextView
         android:id="@+id/ShowPoints"
@@ -644,6 +652,8 @@
         app:layout_constraintBottom_toTopOf="@+id/ViewLine2"
         app:layout_constraintStart_toEndOf="@+id/ShowMeal5Fats"
         app:layout_constraintTop_toBottomOf="@+id/TextMeal5" />
+
+
 
 
 

@@ -330,6 +330,7 @@ class FirstConfigurationActivity : AppCompatActivity() {
 
                 val explicitIntent = Intent(applicationContext,SecondStepConfiguration::class.java)
                 startActivity(explicitIntent)
+                finish()
             }
         }
     }
