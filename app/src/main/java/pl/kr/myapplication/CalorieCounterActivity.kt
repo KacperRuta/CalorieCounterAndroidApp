@@ -27,36 +27,36 @@ class CalorieCounterActivity : AppCompatActivity() {
         binding.ShowFats.text = mealMacrosVm.current_macros.fats.toString() + " / " + macros_goal.fats.toString()
         binding.ShowCarbs.text = mealMacrosVm.current_macros.carbs.toString() + " / " + macros_goal.carbs.toString()
 
-        if(mealMacrosVm.meal_macros_1.calories != 0){
-            binding.ShowMeal1Calories.text = mealMacrosVm.meal_macros_1.calories.toString() + " kcal"
-            binding.ShowMeal1Protein.text = mealMacrosVm.meal_macros_1.protein.toString() + " p"
-            binding.ShowMeal1Fats.text = mealMacrosVm.meal_macros_1.fats.toString() + " f"
-            binding.ShowMeal1Carbs.text = mealMacrosVm.meal_macros_1.carbs.toString() + " c"
-        }
-        if(mealMacrosVm.meal_macros_2.calories != 0){
-            binding.ShowMeal2Calories.text = mealMacrosVm.meal_macros_2.calories.toString() + " kcal"
-            binding.ShowMeal2Protein.text = mealMacrosVm.meal_macros_2.protein.toString() + " p"
-            binding.ShowMeal2Fats.text = mealMacrosVm.meal_macros_2.fats.toString() + " f"
-            binding.ShowMeal2Carbs.text = mealMacrosVm.meal_macros_2.carbs.toString() + " c"
-        }
-        if(mealMacrosVm.meal_macros_3.calories != 0){
-            binding.ShowMeal3Calories.text = mealMacrosVm.meal_macros_3.calories.toString() + " kcal"
-            binding.ShowMeal3Protein.text = mealMacrosVm.meal_macros_3.protein.toString() + " p"
-            binding.ShowMeal3Fats.text = mealMacrosVm.meal_macros_3.fats.toString() + " f"
-            binding.ShowMeal3Carbs.text = mealMacrosVm.meal_macros_3.carbs.toString() + " c"
-        }
-        if(mealMacrosVm.meal_macros_4.calories != 0){
-            binding.ShowMeal4Calories.text = mealMacrosVm.meal_macros_4.calories.toString() + " kcal"
-            binding.ShowMeal4Protein.text = mealMacrosVm.meal_macros_4.protein.toString() + " p"
-            binding.ShowMeal4Fats.text = mealMacrosVm.meal_macros_4.fats.toString() + " f"
-            binding.ShowMeal4Carbs.text = mealMacrosVm.meal_macros_4.carbs.toString() + " c"
-        }
-        if(mealMacrosVm.meal_macros_5.calories != 0){
-            binding.ShowMeal5Calories.text = mealMacrosVm.meal_macros_5.calories.toString() + " kcal"
-            binding.ShowMeal5Protein.text = mealMacrosVm.meal_macros_5.protein.toString() + " p"
-            binding.ShowMeal5Fats.text = mealMacrosVm.meal_macros_5.fats.toString() + " f"
-            binding.ShowMeal5Carbs.text = mealMacrosVm.meal_macros_5.carbs.toString() + " c"
-        }
+
+        binding.ShowMeal1Calories.text = mealMacrosVm.meal_macros_1.calories.toString() + " kcal"
+        binding.ShowMeal1Protein.text = mealMacrosVm.meal_macros_1.protein.toString() + " p"
+        binding.ShowMeal1Fats.text = mealMacrosVm.meal_macros_1.fats.toString() + " f"
+        binding.ShowMeal1Carbs.text = mealMacrosVm.meal_macros_1.carbs.toString() + " c"
+
+
+        binding.ShowMeal2Calories.text = mealMacrosVm.meal_macros_2.calories.toString() + " kcal"
+        binding.ShowMeal2Protein.text = mealMacrosVm.meal_macros_2.protein.toString() + " p"
+        binding.ShowMeal2Fats.text = mealMacrosVm.meal_macros_2.fats.toString() + " f"
+        binding.ShowMeal2Carbs.text = mealMacrosVm.meal_macros_2.carbs.toString() + " c"
+
+
+        binding.ShowMeal3Calories.text = mealMacrosVm.meal_macros_3.calories.toString() + " kcal"
+        binding.ShowMeal3Protein.text = mealMacrosVm.meal_macros_3.protein.toString() + " p"
+        binding.ShowMeal3Fats.text = mealMacrosVm.meal_macros_3.fats.toString() + " f"
+        binding.ShowMeal3Carbs.text = mealMacrosVm.meal_macros_3.carbs.toString() + " c"
+
+
+        binding.ShowMeal4Calories.text = mealMacrosVm.meal_macros_4.calories.toString() + " kcal"
+        binding.ShowMeal4Protein.text = mealMacrosVm.meal_macros_4.protein.toString() + " p"
+        binding.ShowMeal4Fats.text = mealMacrosVm.meal_macros_4.fats.toString() + " f"
+        binding.ShowMeal4Carbs.text = mealMacrosVm.meal_macros_4.carbs.toString() + " c"
+
+
+        binding.ShowMeal5Calories.text = mealMacrosVm.meal_macros_5.calories.toString() + " kcal"
+        binding.ShowMeal5Protein.text = mealMacrosVm.meal_macros_5.protein.toString() + " p"
+        binding.ShowMeal5Fats.text = mealMacrosVm.meal_macros_5.fats.toString() + " f"
+        binding.ShowMeal5Carbs.text = mealMacrosVm.meal_macros_5.carbs.toString() + " c"
+
     }
 
     fun calculate_current_macros(){
@@ -107,7 +107,7 @@ class CalorieCounterActivity : AppCompatActivity() {
         calculate_current_macros()
         show_meals()
 
-
+        points = intent.getIntExtra("Points",0)
         binding.ShowPoints.text = points.toString()
     }
 
@@ -134,7 +134,7 @@ class CalorieCounterActivity : AppCompatActivity() {
 
 
         binding.AddMeal1.setOnClickListener {
-            val explicitIntent = Intent(applicationContext, MealDetailsAdding::class.java)
+            val explicitIntent = Intent(applicationContext, ProductAddingActivity::class.java)
             explicitIntent.putExtra("MealNumber", 1)
             var intArray = intArrayOf(mealMacrosVm.meal_macros_1.calories,
                 mealMacrosVm.meal_macros_1.protein,
@@ -152,7 +152,7 @@ class CalorieCounterActivity : AppCompatActivity() {
         }
 
         binding.AddMeal2.setOnClickListener {
-            val explicitIntent = Intent(applicationContext, MealDetailsAdding::class.java)
+            val explicitIntent = Intent(applicationContext, ProductAddingActivity::class.java)
             explicitIntent.putExtra("MealNumber", 2)
             var intArray = intArrayOf(mealMacrosVm.meal_macros_2.calories,
                 mealMacrosVm.meal_macros_2.protein,
@@ -170,7 +170,7 @@ class CalorieCounterActivity : AppCompatActivity() {
         }
 
         binding.AddMeal3.setOnClickListener {
-            val explicitIntent = Intent(applicationContext, MealDetailsAdding::class.java)
+            val explicitIntent = Intent(applicationContext, ProductAddingActivity::class.java)
             explicitIntent.putExtra("MealNumber", 3)
             var intArray = intArrayOf(mealMacrosVm.meal_macros_3.calories,
                 mealMacrosVm.meal_macros_3.protein,
@@ -188,7 +188,7 @@ class CalorieCounterActivity : AppCompatActivity() {
         }
 
         binding.AddMeal4.setOnClickListener {
-            val explicitIntent = Intent(applicationContext, MealDetailsAdding::class.java)
+            val explicitIntent = Intent(applicationContext, ProductAddingActivity::class.java)
             explicitIntent.putExtra("MealNumber", 4)
             var intArray = intArrayOf(mealMacrosVm.meal_macros_4.calories,
                 mealMacrosVm.meal_macros_4.protein,
@@ -206,7 +206,7 @@ class CalorieCounterActivity : AppCompatActivity() {
         }
 
         binding.AddMeal5.setOnClickListener {
-            val explicitIntent = Intent(applicationContext, MealDetailsAdding::class.java)
+            val explicitIntent = Intent(applicationContext, ProductAddingActivity::class.java)
             explicitIntent.putExtra("MealNumber", 5)
             var intArray = intArrayOf(mealMacrosVm.meal_macros_5.calories,
                 mealMacrosVm.meal_macros_5.protein,
@@ -217,12 +217,48 @@ class CalorieCounterActivity : AppCompatActivity() {
             finish()
         }
 
-        binding.DeleteMeal5.setOnClickListener {
-            mealMacrosVm.reset_meal_macros(5)
-            mealMacrosVm.meal_macros_5 = Macros(0,0,0,0)
+        binding.DeleteMeal1.setOnClickListener {
+            mealMacrosVm.reset_meal_macros(1)
+            mealMacrosVm.meal_macros_1 = Macros(0,0,0,0)
             calculate_current_macros()
         }
 
+        binding.DeleteMeal2.setOnClickListener {
+            mealMacrosVm.meal_macros_2 = Macros(0,0,0,0)
+            mealMacrosVm.reset_meal_macros(2)
+            calculate_current_macros()
+            show_meals()
+        }
+        binding.DeleteMeal3.setOnClickListener {
+            mealMacrosVm.meal_macros_3 = Macros(0,0,0,0)
+            mealMacrosVm.reset_meal_macros(3)
+            calculate_current_macros()
+            show_meals()
+        }
+        binding.DeleteMeal4.setOnClickListener {
+            mealMacrosVm.meal_macros_4 = Macros(0,0,0,0)
+            mealMacrosVm.reset_meal_macros(4)
+            calculate_current_macros()
+            show_meals()
+        }
+        binding.DeleteMeal5.setOnClickListener {
+            mealMacrosVm.meal_macros_5 = Macros(0,0,0,0)
+            mealMacrosVm.reset_meal_macros(5)
+            calculate_current_macros()
+            show_meals()
+        }
+
+
+
+
+
+
+        binding.endDay.setOnClickListener {
+            binding.endDay.text = "ARE U SURE"
+            binding.endDay.setOnClickListener {
+                // dodaj nowy layout i podsumowanie zrob
+            }
+        }
 
         setContentView(binding.root)
     }

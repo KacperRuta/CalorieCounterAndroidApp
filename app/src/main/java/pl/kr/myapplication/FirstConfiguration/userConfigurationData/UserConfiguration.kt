@@ -16,6 +16,7 @@ data class UserConfiguration(    @PrimaryKey val id: Int = 1,
                                  val protein: Int,
                                  val fats: Int,
                                  val carbs: Int,
-                                 val diet_choice: Int)
+                                 val diet_choice: Int,
+                                 val user_points: Int)
 
 

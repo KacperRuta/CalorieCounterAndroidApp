@@ -282,6 +282,8 @@ class SecondStepConfiguration : AppCompatActivity() {
                     mealMacrosVm.meal_macros_5.carbs)
                 explicitIntent.putExtra("Meal_macros_5",intArray)
 
+                explicitIntent.putExtra("Points",configVm.user_points)
+
                 startActivity(explicitIntent)
                 finish()
             }

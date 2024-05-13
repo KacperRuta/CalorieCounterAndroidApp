@@ -13,7 +13,7 @@ import pl.kr.myapplication.ViewModels.MealViewModel
 import pl.kr.myapplication.ViewModels.ProductsViewModel
 import pl.kr.myapplication.databinding.ActivityMealDetailsAddingBinding
 
-class MealDetailsAdding : AppCompatActivity() {
+class ProductAddingActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMealDetailsAddingBinding
     private val mealMacrosVm by viewModels<MealViewModel>()
@@ -86,6 +86,8 @@ class MealDetailsAdding : AppCompatActivity() {
                 mealMacrosVm.meal_macros_5.carbs)
             explicitIntent.putExtra("Meal_macros_5",intArray)
 
+            explicitIntent.putExtra("Points",configVm.user_points)
+
             startActivity(explicitIntent)
             finish()
         }
@@ -132,7 +134,7 @@ class MealDetailsAdding : AppCompatActivity() {
                         productsVm.meals_to_show[0].calories.toString() + " kcal" + "   " +
                         productsVm.meals_to_show[0].protein.toString() + " p" + "  " +
                         productsVm.meals_to_show[0].fats.toString() + " f" + "  " +
-                        productsVm.meals_to_show[0].carbs.toString()
+                        productsVm.meals_to_show[0].carbs.toString() + " c"
                 binding.TextProduct2.visibility = View.INVISIBLE
                 binding.TextProduct2.isClickable = false
                 binding.TextProduct3.visibility = View.INVISIBLE
@@ -157,7 +159,7 @@ class MealDetailsAdding : AppCompatActivity() {
                         productsVm.meals_to_show[1].calories.toString() + " kcal" + "   " +
                         productsVm.meals_to_show[1].protein.toString() + " p" + "  " +
                         productsVm.meals_to_show[1].fats.toString() + " f" + "  " +
-                        productsVm.meals_to_show[1].carbs.toString()
+                        productsVm.meals_to_show[1].carbs.toString() + " c"
             }
             if(size >= 3){
                 binding.TextProduct3.visibility = View.VISIBLE
@@ -166,7 +168,7 @@ class MealDetailsAdding : AppCompatActivity() {
                         productsVm.meals_to_show[2].calories.toString() + " kcal" + "   " +
                         productsVm.meals_to_show[2].protein.toString() + " p" + "  " +
                         productsVm.meals_to_show[2].fats.toString() + " f" + "  " +
-                        productsVm.meals_to_show[2].carbs.toString()
+                        productsVm.meals_to_show[2].carbs.toString() + " c"
             }
             if(size >= 4){
                 binding.TextProduct4.visibility = View.VISIBLE
@@ -175,7 +177,7 @@ class MealDetailsAdding : AppCompatActivity() {
                         productsVm.meals_to_show[3].calories.toString() + " kcal" + "   " +
                         productsVm.meals_to_show[3].protein.toString() + " p" + "  " +
                         productsVm.meals_to_show[3].fats.toString() + " f" + "  " +
-                        productsVm.meals_to_show[3].carbs.toString()
+                        productsVm.meals_to_show[3].carbs.toString() + " c"
             }
             if(size >= 5){
                 binding.TextProduct5.visibility = View.VISIBLE
@@ -184,7 +186,7 @@ class MealDetailsAdding : AppCompatActivity() {
                         productsVm.meals_to_show[4].calories.toString() + " kcal" + "   " +
                         productsVm.meals_to_show[4].protein.toString() + " p" + "  " +
                         productsVm.meals_to_show[4].fats.toString() + " f" + "  " +
-                        productsVm.meals_to_show[4].carbs.toString()
+                        productsVm.meals_to_show[4].carbs.toString() + " c"
             }
             if(size >= 6){
                 binding.TextProduct6.visibility = View.VISIBLE
@@ -193,7 +195,7 @@ class MealDetailsAdding : AppCompatActivity() {
                         productsVm.meals_to_show[5].calories.toString() + " kcal" + "   " +
                         productsVm.meals_to_show[5].protein.toString() + " p" + "  " +
                         productsVm.meals_to_show[5].fats.toString() + " f" + "  " +
-                        productsVm.meals_to_show[5].carbs.toString()
+                        productsVm.meals_to_show[5].carbs.toString() + " c"
             }
             if(size >= 7){
                 binding.TextProduct7.visibility = View.VISIBLE
@@ -202,7 +204,7 @@ class MealDetailsAdding : AppCompatActivity() {
                         productsVm.meals_to_show[6].calories.toString() + " kcal" + "   " +
                         productsVm.meals_to_show[6].protein.toString() + " p" + "  " +
                         productsVm.meals_to_show[6].fats.toString() + " f" + "  " +
-                        productsVm.meals_to_show[6].carbs.toString()
+                        productsVm.meals_to_show[6].carbs.toString() + " c"
             }
             if(size >= 8){
                 binding.TextProduct8.visibility = View.VISIBLE
@@ -211,7 +213,7 @@ class MealDetailsAdding : AppCompatActivity() {
                         productsVm.meals_to_show[7].calories.toString() + " kcal" + "   " +
                         productsVm.meals_to_show[7].protein.toString() + " p" + "  " +
                         productsVm.meals_to_show[7].fats.toString() + " f" + "  " +
-                        productsVm.meals_to_show[7].carbs.toString()
+                        productsVm.meals_to_show[7].carbs.toString() + " c"
             }
             if(size == 9){
                 binding.TextProduct9.visibility = View.VISIBLE
@@ -220,10 +222,132 @@ class MealDetailsAdding : AppCompatActivity() {
                         productsVm.meals_to_show[8].calories.toString() + " kcal" + "   " +
                         productsVm.meals_to_show[8].protein.toString() + " p" + "  " +
                         productsVm.meals_to_show[8].fats.toString() + " f" + "  " +
-                        productsVm.meals_to_show[8].carbs.toString()
+                        productsVm.meals_to_show[8].carbs.toString() + " c"
             }
 
         }
+
+
+        binding.buttonEnterProduct.setOnClickListener {
+            val explicitIntent = Intent(applicationContext, ProductInsertingActivity::class.java)
+
+            var intArray = intArrayOf(current_meal_macros.calories, current_meal_macros.protein, current_meal_macros.fats, current_meal_macros.carbs)
+            explicitIntent.putExtra("Meal_macros",intArray)
+            explicitIntent.putExtra("MealNumber",meal_number)
+            startActivity(explicitIntent)
+            finish()
+        }
+
+        binding.TextProduct1.setOnClickListener {
+            val explicitIntent = Intent(applicationContext, ProductInsertingActivity::class.java)
+
+            var intArray = intArrayOf(current_meal_macros.calories, current_meal_macros.protein, current_meal_macros.fats, current_meal_macros.carbs)
+            explicitIntent.putExtra("Meal_macros",intArray)
+            intArray = intArrayOf(productsVm.meals_to_show[0].calories, productsVm.meals_to_show[0].protein, productsVm.meals_to_show[0].fats , productsVm.meals_to_show[0].carbs)
+            explicitIntent.putExtra("Meal_name",productsVm.meals_to_show[0].meal_name)
+            explicitIntent.putExtra("Saved_macros", intArray)
+            explicitIntent.putExtra("MealNumber",meal_number)
+            startActivity(explicitIntent)
+            finish()
+        }
+        binding.TextProduct2.setOnClickListener {
+            val explicitIntent = Intent(applicationContext, ProductInsertingActivity::class.java)
+
+            var intArray = intArrayOf(current_meal_macros.calories, current_meal_macros.protein, current_meal_macros.fats, current_meal_macros.carbs)
+            explicitIntent.putExtra("Meal_macros",intArray)
+            intArray = intArrayOf(productsVm.meals_to_show[1].calories, productsVm.meals_to_show[1].protein, productsVm.meals_to_show[1].fats , productsVm.meals_to_show[1].carbs)
+            explicitIntent.putExtra("Meal_name",productsVm.meals_to_show[1].meal_name)
+            explicitIntent.putExtra("Saved_macros", intArray)
+            explicitIntent.putExtra("MealNumber",meal_number)
+            startActivity(explicitIntent)
+            finish()
+        }
+        binding.TextProduct3.setOnClickListener {
+            val explicitIntent = Intent(applicationContext, ProductInsertingActivity::class.java)
+
+            var intArray = intArrayOf(current_meal_macros.calories, current_meal_macros.protein, current_meal_macros.fats, current_meal_macros.carbs)
+            explicitIntent.putExtra("Meal_macros",intArray)
+            intArray = intArrayOf(productsVm.meals_to_show[2].calories, productsVm.meals_to_show[2].protein, productsVm.meals_to_show[2].fats , productsVm.meals_to_show[2].carbs)
+            explicitIntent.putExtra("Meal_name",productsVm.meals_to_show[2].meal_name)
+            explicitIntent.putExtra("Saved_macros", intArray)
+            explicitIntent.putExtra("MealNumber",meal_number)
+            startActivity(explicitIntent)
+            finish()
+        }
+        binding.TextProduct4.setOnClickListener {
+            val explicitIntent = Intent(applicationContext, ProductInsertingActivity::class.java)
+
+            var intArray = intArrayOf(current_meal_macros.calories, current_meal_macros.protein, current_meal_macros.fats, current_meal_macros.carbs)
+            explicitIntent.putExtra("Meal_macros",intArray)
+            intArray = intArrayOf(productsVm.meals_to_show[3].calories, productsVm.meals_to_show[3].protein, productsVm.meals_to_show[3].fats , productsVm.meals_to_show[3].carbs)
+            explicitIntent.putExtra("Meal_name",productsVm.meals_to_show[3].meal_name)
+            explicitIntent.putExtra("Saved_macros", intArray)
+            explicitIntent.putExtra("MealNumber",meal_number)
+            startActivity(explicitIntent)
+            finish()
+        }
+        binding.TextProduct5.setOnClickListener {
+            val explicitIntent = Intent(applicationContext, ProductInsertingActivity::class.java)
+
+            var intArray = intArrayOf(current_meal_macros.calories, current_meal_macros.protein, current_meal_macros.fats, current_meal_macros.carbs)
+            explicitIntent.putExtra("Meal_macros",intArray)
+            intArray = intArrayOf(productsVm.meals_to_show[4].calories, productsVm.meals_to_show[4].protein, productsVm.meals_to_show[4].fats , productsVm.meals_to_show[4].carbs)
+            explicitIntent.putExtra("Meal_name",productsVm.meals_to_show[4].meal_name)
+            explicitIntent.putExtra("Saved_macros", intArray)
+            explicitIntent.putExtra("MealNumber",meal_number)
+            startActivity(explicitIntent)
+            finish()
+        }
+        binding.TextProduct6.setOnClickListener {
+            val explicitIntent = Intent(applicationContext, ProductInsertingActivity::class.java)
+
+            var intArray = intArrayOf(current_meal_macros.calories, current_meal_macros.protein, current_meal_macros.fats, current_meal_macros.carbs)
+            explicitIntent.putExtra("Meal_macros",intArray)
+            intArray = intArrayOf(productsVm.meals_to_show[5].calories, productsVm.meals_to_show[5].protein, productsVm.meals_to_show[5].fats , productsVm.meals_to_show[5].carbs)
+            explicitIntent.putExtra("Meal_name",productsVm.meals_to_show[5].meal_name)
+            explicitIntent.putExtra("Saved_macros", intArray)
+            explicitIntent.putExtra("MealNumber",meal_number)
+            startActivity(explicitIntent)
+            finish()
+        }
+        binding.TextProduct7.setOnClickListener {
+            val explicitIntent = Intent(applicationContext, ProductInsertingActivity::class.java)
+
+            var intArray = intArrayOf(current_meal_macros.calories, current_meal_macros.protein, current_meal_macros.fats, current_meal_macros.carbs)
+            explicitIntent.putExtra("Meal_macros",intArray)
+            intArray = intArrayOf(productsVm.meals_to_show[6].calories, productsVm.meals_to_show[6].protein, productsVm.meals_to_show[6].fats , productsVm.meals_to_show[6].carbs)
+            explicitIntent.putExtra("Meal_name",productsVm.meals_to_show[6].meal_name)
+            explicitIntent.putExtra("Saved_macros", intArray)
+            explicitIntent.putExtra("MealNumber",meal_number)
+            startActivity(explicitIntent)
+            finish()
+        }
+        binding.TextProduct8.setOnClickListener {
+            val explicitIntent = Intent(applicationContext, ProductInsertingActivity::class.java)
+
+            var intArray = intArrayOf(current_meal_macros.calories, current_meal_macros.protein, current_meal_macros.fats, current_meal_macros.carbs)
+            explicitIntent.putExtra("Meal_macros",intArray)
+            intArray = intArrayOf(productsVm.meals_to_show[7].calories, productsVm.meals_to_show[7].protein, productsVm.meals_to_show[7].fats , productsVm.meals_to_show[7].carbs)
+            explicitIntent.putExtra("Meal_name",productsVm.meals_to_show[7].meal_name)
+            explicitIntent.putExtra("Saved_macros", intArray)
+            explicitIntent.putExtra("MealNumber",meal_number)
+            startActivity(explicitIntent)
+            finish()
+        }
+        binding.TextProduct9.setOnClickListener {
+            val explicitIntent = Intent(applicationContext, ProductInsertingActivity::class.java)
+
+            var intArray = intArrayOf(current_meal_macros.calories, current_meal_macros.protein, current_meal_macros.fats, current_meal_macros.carbs)
+            explicitIntent.putExtra("Meal_macros",intArray)
+            intArray = intArrayOf(productsVm.meals_to_show[8].calories, productsVm.meals_to_show[8].protein, productsVm.meals_to_show[8].fats , productsVm.meals_to_show[8].carbs)
+            explicitIntent.putExtra("Meal_name",productsVm.meals_to_show[8].meal_name)
+            explicitIntent.putExtra("Saved_macros", intArray)
+            explicitIntent.putExtra("MealNumber",meal_number)
+            startActivity(explicitIntent)
+            finish()
+        }
+
+
 
         setContentView(binding.root)
     }

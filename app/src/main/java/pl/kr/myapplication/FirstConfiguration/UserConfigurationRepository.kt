@@ -65,4 +65,8 @@ class UserConfigurationRepository(context: Context): UserConfigurationDao {
     override suspend fun getDietChoice(): Int {
         return configDao.getDietChoice()
     }
+
+    override suspend fun getUserPoints(): Int {
+        return configDao.getUserPoints()
+    }
 }

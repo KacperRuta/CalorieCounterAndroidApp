@@ -24,6 +24,7 @@ class ConfigurationViewModel(app: Application): AndroidViewModel(app) {
     var fats: Int = 0
     var carbs: Int = 0
     var diet_choice: Int = 0
+    var user_points: Int = 0
 
 
     private val configRepo = UserConfigurationRepository(app.applicationContext)
@@ -43,11 +44,12 @@ class ConfigurationViewModel(app: Application): AndroidViewModel(app) {
             fats = configRepo.getFats()
             carbs = configRepo.getCarbs()
             diet_choice = configRepo.getDietChoice()
+            user_points = configRepo.getUserPoints()
         }
     }
 
     fun updateConfig() {
-        val config = UserConfiguration(1,configurated,age,height,weight,gender,activity_lvl,weight_goal,calories,protein,fats,carbs,diet_choice)
+        val config = UserConfiguration(1,configurated,age,height,weight,gender,activity_lvl,weight_goal,calories,protein,fats,carbs,diet_choice, user_points)
 
         CoroutineScope(viewModelScope.coroutineContext).launch {
             configRepo.insertOrUpdate(config)

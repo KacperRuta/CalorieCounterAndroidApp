@@ -46,4 +46,7 @@ interface UserConfigurationDao {
 
     @Query("SELECT diet_choice FROM UserConfiguration WHERE id = 1")
     suspend fun getDietChoice(): Int
+
+    @Query("SELECT user_points FROM UserConfiguration WHERE id = 1")
+    suspend fun getUserPoints(): Int
 }
