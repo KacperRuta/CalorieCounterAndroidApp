@@ -90,10 +90,8 @@ class CalorieCounterActivity : AppCompatActivity() {
             intent.getIntExtra("Carbs",0))
 
         val defaultIntArray = intArrayOf(0, 0, 0, 0)
-        var intArray = intent.getIntArrayExtra("Current_macros") ?: defaultIntArray
 
-
-        intArray = intent.getIntArrayExtra("Meal_macros_1") ?: defaultIntArray
+        var intArray = intent.getIntArrayExtra("Meal_macros_1") ?: defaultIntArray
         mealMacrosVm.meal_macros_1 = Macros(intArray[0],intArray[1],intArray[2],intArray[3])
         intArray = intent.getIntArrayExtra("Meal_macros_2") ?: defaultIntArray
         mealMacrosVm.meal_macros_2 = Macros(intArray[0],intArray[1],intArray[2],intArray[3])
@@ -256,7 +254,20 @@ class CalorieCounterActivity : AppCompatActivity() {
         binding.endDay.setOnClickListener {
             binding.endDay.text = "ARE U SURE"
             binding.endDay.setOnClickListener {
-                // dodaj nowy layout i podsumowanie zrob
+                var macros = intArrayOf(mealMacrosVm.current_macros.calories,mealMacrosVm.current_macros.protein, mealMacrosVm.current_macros.fats, mealMacrosVm.current_macros.carbs)
+
+                val explicitIntent = Intent(applicationContext, DaySummary::class.java)
+                explicitIntent.putExtra("Calories",configVm.calories)
+                explicitIntent.putExtra("Protein",configVm.protein)
+                explicitIntent.putExtra("Fats",configVm.fats)
+                explicitIntent.putExtra("Carbs",configVm.carbs)
+                explicitIntent.putExtra("Current_macros", macros)
+                explicitIntent.putExtra("Points", points)
+                explicitIntent.putExtra("Diet_type", configVm.diet_choice)
+                explicitIntent.putExtra("Weight",configVm.weight)
+                explicitIntent.putExtra("Weight_goal",configVm.weight_goal)
+                startActivity(explicitIntent)
+                finish()
             }
         }
 

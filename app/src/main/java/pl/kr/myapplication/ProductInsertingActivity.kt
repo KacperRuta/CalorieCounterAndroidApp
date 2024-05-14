@@ -79,18 +79,19 @@ class ProductInsertingActivity : AppCompatActivity() {
                 binding.enterCarbs.text.toString().isNotEmpty() && binding.enterCarbs.text.toString().toInt() in 0..100 &&
                 binding.enterName.text.toString().isNotEmpty() &&
                 binding.enterPortion.text.toString().isNotEmpty() && binding.enterPortion.text.toString().toInt() > 0){
+                productsVm.product_name = binding.enterName.text.toString()
+                productsVm.calories = binding.enterCalories.text.toString().toInt()
+                productsVm.protein = binding.enterProtein.text.toString().toInt()
+                productsVm.fats = binding.enterFats.text.toString().toInt()
+                productsVm.carbs = binding.enterCarbs.text.toString().toInt()
+                productsVm.add_product()
                 val calories = binding.enterCalories.text.toString().toInt() * binding.enterPortion.text.toString().toInt()  * 0.01
                 val protein = binding.enterProtein.text.toString().toInt() * binding.enterPortion.text.toString().toInt()  * 0.01
                 val fats = binding.enterFats.text.toString().toInt() * binding.enterPortion.text.toString().toInt()  * 0.01
                 val carbs = binding.enterCarbs.text.toString().toInt() * binding.enterPortion.text.toString().toInt()  * 0.01
                 current_meal_macros = Macros(calories.toInt(),protein.toInt(),fats.toInt(),carbs.toInt())
 
-                productsVm.product_name = binding.enterName.text.toString()
-                productsVm.calories = current_meal_macros.calories
-                productsVm.protein = current_meal_macros.protein
-                productsVm.fats = current_meal_macros.fats
-                productsVm.carbs = current_meal_macros.carbs
-                productsVm.add_product()
+
 
                 val explicitIntent = Intent(applicationContext, ProductAddingActivity::class.java)
 
